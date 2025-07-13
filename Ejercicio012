@@ -1,0 +1,20 @@
+public class Ejercicio012 {
+    public static void main(String[] args) {
+        int contadorPares = 0; // Variable para contar los números pares
+
+        System.out.println("Números pares del 1 al 100:");
+
+        // Bucle para iterar desde 1 hasta 100
+        for (int i = 1; i <= 100; i++) {
+            // Verifica si el número actual es par
+            // Un número es par si el residuo de su división por 2 es 0
+            if (i % 2 == 0) {
+                System.out.println(i); // Imprime el número par
+                contadorPares++;       // Incrementa el contador de pares
+            }
+        }
+
+        // Muestra la cantidad total de números pares encontrados
+        System.out.println("\nTotal de números pares encontrados: " + contadorPares);
+    }
+}
