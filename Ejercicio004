@@ -1,0 +1,22 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+
+public class Ejercicio004{
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita al usuario que ingrese el puntaje del participante
+        System.out.println("Ingresa el puntaje del participante:");
+        int puntaje = scanner.nextInt(); // Lee el puntaje ingresado por el usuario
+
+        // Evalúa el puntaje para determinar si gana medalla o es finalista
+        if (puntaje >= 80) { // Si el puntaje es mayor o igual a 80
+            System.out.println("¡Felicidades! Ganas una medalla."); // Imprime mensaje de medalla
+        } else { // Si el puntaje es menor a 80
+            System.out.println("Quedas como finalista."); // Imprime mensaje de finalista
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
