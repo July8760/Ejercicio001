@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class EvaluacionEstudiante {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Initial grade
+        double calificacionInicial = 14;
+        System.out.println("Calificación inicial del estudiante: " + calificacionInicial);
+
+        // Ask for attendance percentage
+        System.out.print("Ingrese el porcentaje de asistencia del estudiante (ej. 85 para 85%): ");
+        double porcentajeAsistencia = scanner.nextDouble();
+
+        double calificacionFinal = calificacionInicial;
+        String estadoAsistencia;
+
+        // Check if attendance is over 80% and add bonus points
+        if (porcentajeAsistencia > 80) {
+            calificacionFinal += 2; // Add 2 points
+            estadoAsistencia = "¡Asistencia excelente! Se le suman 2 puntos.";
+        } else {
+            estadoAsistencia = "La asistencia no supera el 80%, no se suman puntos adicionales.";
+        }
+
+        System.out.println(estadoAsistencia);
+        System.out.println("Calificación final después de considerar la asistencia: " + calificacionFinal);
+
+        // Check if the student passed
+        if (calificacionFinal >= 16) {
+            System.out.println("El estudiante APROBÓ con " + calificacionFinal + " puntos.");
+        } else {
+            System.out.println("El estudiante REPROBÓ con " + calificacionFinal + " puntos. Necesitaba al menos 16 puntos.");
+        }
+
+        scanner.close();
+    }
+}
