@@ -1,0 +1,33 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+public class Ejercicio017 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Constante para el número de números a ingresar
+        final int NUM_NUMEROS = 15;
+        // Variable para contar cuántos números son negativos
+        int contadorNegativos = 0;
+
+        System.out.println("--- Conteo de Números Negativos ---");
+        System.out.println("Por favor, ingresa " + NUM_NUMEROS + " números.");
+
+        // Bucle for para pedir cada número
+        for (int i = 1; i <= NUM_NUMEROS; i++) {
+            System.out.print("Ingresa el número " + i + ": ");
+            int numero = scanner.nextInt(); // Lee el número ingresado
+
+            // Verifica si el número es negativo
+            if (numero < 0) {
+                contadorNegativos++; // Incrementa el contador si el número es negativo
+            }
+        }
+
+        System.out.println("\n--- Resumen ---");
+        // Muestra la cantidad de números negativos encontrados
+        System.out.println("Cantidad de valores negativos ingresados: " + contadorNegativos);
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
