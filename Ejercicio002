@@ -1,0 +1,24 @@
+public class CalculoSueldo {
+    public static void main(String[] args) {
+        // Sueldo base del trabajador
+        double sueldoBase = 400.0;
+
+        // Pago adicional por cada hora extra
+        double pagoPorHoraExtra = 10.0;
+
+        // Número de horas extra trabajadas
+        int horasExtraTrabajadas = 5;
+
+        // Calcular el pago por horas extra
+        double pagoHorasExtra = pagoPorHoraExtra * horasExtraTrabajadas;
+
+        // Calcular el sueldo total
+        double sueldoTotal = sueldoBase + pagoHorasExtra;
+
+        // Mostrar el sueldo total
+        System.out.println("Sueldo base: $" + String.format("%.2f", sueldoBase));
+        System.out.println("Horas extra trabajadas: " + horasExtraTrabajadas);
+        System.out.println("Pago por horas extra: $" + String.format("%.2f", pagoHorasExtra));
+        System.out.println("Sueldo total: $" + String.format("%.2f", sueldoTotal));
+    }
+}
