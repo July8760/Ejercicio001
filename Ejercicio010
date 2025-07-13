@@ -1,0 +1,32 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+public class Ejercicio010 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Define el nombre de usuario y la contraseña correctos
+        String usuarioCorrecto = "usuario123";
+        String contrasenaCorrecta = "password123";
+
+        System.out.println("--- Sistema de Inicio de Sesión ---");
+
+        // Solicita al usuario que ingrese su nombre de usuario
+        System.out.print("Ingresa tu nombre de usuario: ");
+        String usuarioIngresado = scanner.nextLine(); // Lee el nombre de usuario
+
+        // Solicita al usuario que ingrese su contraseña
+        System.out.print("Ingresa tu contraseña: ");
+        String contrasenaIngresada = scanner.nextLine(); // Lee la contraseña
+
+        // Compara las credenciales ingresadas con las correctas
+        // .equals() se usa para comparar el contenido de las cadenas de texto
+        if (usuarioIngresado.equals(usuarioCorrecto) && contrasenaIngresada.equals(contrasenaCorrecta)) {
+            System.out.println("\n¡Bienvenido/a, " + usuarioIngresado + "! Has iniciado sesión correctamente.");
+        } else {
+            System.out.println("\nInformación ingresada no es CORRECTA. Por favor, verifica tu usuario y contraseña.");
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
