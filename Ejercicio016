@@ -1,0 +1,33 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+public class Ejercicio016 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Constante para el número de sensores
+        final int NUM_SENSORES = 50;
+        // Variable para contar cuántos sensores están fuera de rango
+        int sensoresFueraDeRango = 0;
+
+        System.out.println("--- Registro de Lecturas de Sensores ---");
+        System.out.println("Por favor, ingresa el valor de lectura para cada uno de los " + NUM_SENSORES + " sensores.");
+
+        // Bucle for para pedir el valor de lectura de cada sensor
+        for (int i = 1; i <= NUM_SENSORES; i++) {
+            System.out.print("Lectura del Sensor " + i + ": ");
+            int lecturaSensor = scanner.nextInt(); // Lee el valor de lectura del sensor actual
+
+            // Verifica si la lectura del sensor está fuera de rango (valor > 100 o valor < 0)
+            if (lecturaSensor > 100 || lecturaSensor < 0) {
+                sensoresFueraDeRango++; // Incrementa el contador si está fuera de rango
+            }
+        }
+
+        System.out.println("\n--- Resumen de Lecturas ---");
+        // Muestra la cantidad de sensores que están fuera de rango
+        System.out.println("Cantidad de sensores fuera de rango (valor > 100 o valor < 0): " + sensoresFueraDeRango);
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
