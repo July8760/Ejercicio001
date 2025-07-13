@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Ejercicio003 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar los precios de los tres productos
+        System.out.println("Ingresa el precio del producto 1:");
+        double precio1 = scanner.nextDouble();
+
+        System.out.println("Ingresa el precio del producto 2:");
+        double precio2 = scanner.nextDouble();
+
+        System.out.println("Ingresa el precio del producto 3:");
+        double precio3 = scanner.nextDouble();
+
+        // Calcular el total sin descuento
+        double totalSinDescuento = precio1 + precio2 + precio3;
+        System.out.println("El total sin descuento es: $" + String.format("%.2f", totalSinDescuento));
+
+        // Aplicar descuento si el total supera los 100
+        double totalConDescuento;
+        if (totalSinDescuento > 100) {
+            double descuento = totalSinDescuento * 0.10;
+            totalConDescuento = totalSinDescuento - descuento;
+            System.out.println("Se aplica un descuento del 10%.");
+            System.out.println("El descuento es: $" + String.format("%.2f", descuento));
+            System.out.println("El total a pagar con descuento es: $" + String.format("%.2f", totalConDescuento));
+        } else {
+            totalConDescuento = totalSinDescuento;
+            System.out.println("No se aplica descuento. El total a pagar es: $" + String.format("%.2f", totalConDescuento));
+        }
+
+        scanner.close();
+    }
+}
