@@ -1,0 +1,31 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+
+public class Ejercicio006 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita al usuario que ingrese la edad
+        System.out.println("Ingresa la edad de la persona:");
+        int edad = scanner.nextInt(); // Lee la edad ingresada por el usuario
+
+        // Solicita al usuario si presenta cédula
+        System.out.println("¿La persona presenta su cédula? (Sí/No)");
+        String presentaCedulaStr = scanner.next(); // Lee la respuesta del usuario
+
+        // Convierte la respuesta a un booleano para facilitar la lógica
+        boolean presentaCedula = presentaCedulaStr.equalsIgnoreCase("Sí");
+
+        // Evalúa las condiciones para la elegibilidad del voto
+        if (edad >= 16 && presentaCedula) { // Si la edad es 16 o más Y presenta cédula
+            System.out.println("La persona puede votar."); // La persona es elegible
+        } else if (edad < 16) { // Si la edad es menor de 16
+            System.out.println("La persona no puede votar: Es menor de 16 años."); // Motivo: edad
+        } else { // Si la edad es 16 o más, pero no presenta cédula
+            System.out.println("La persona no puede votar: No presenta su cédula."); // Motivo: no presenta cédula
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
