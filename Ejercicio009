@@ -1,0 +1,50 @@
+import java.util.Scanner; // Importa la clase Scanner para leer la entrada del usuario
+public class Ejercicio009 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        double sumaNotas = 0; // Variable para acumular la suma de las notas
+        boolean tuvoNotaMenorA4 = false; // Bandera para verificar si hubo alguna nota menor a 4
+
+        System.out.println("Por favor, ingresa las notas de los 4 exámenes:");
+
+        // Bucle para registrar las 4 notas de los exámenes
+        for (int i = 1; i <= 4; i++) {
+            System.out.print("Ingresa la nota del examen " + i + ": ");
+            double nota = scanner.nextDouble(); // Lee la nota ingresada
+
+            sumaNotas += nota; // Agrega la nota a la suma total
+
+            // Verifica si la nota es menor a 4
+            if (nota < 4) {
+                tuvoNotaMenorA4 = true; // Si es menor a 4, activa la bandera
+            }
+        }
+
+        // Calcula el promedio de las notas
+        double promedio = sumaNotas / 4;
+
+        System.out.println("\n--- Resultado del Curso ---");
+        System.out.println("Promedio del estudiante: " + String.format("%.2f", promedio));
+
+        // Evalúa las condiciones para aprobar o reprobar el curso
+        // Condición 1: Promedio mayor o igual a 7
+        // Condición 2: No tuvo ninguna nota menor a 4
+        if (promedio >= 7 && !tuvoNotaMenorA4) {
+            System.out.println("¡Felicidades! El estudiante ha APROBADO el curso.");
+        } else {
+            System.out.println("El estudiante ha REPROBADO el curso.");
+            // Opcional: Mostrar el motivo de la reprobación
+            if (promedio < 7) {
+                System.out.println("Motivo: El promedio es menor a 7.");
+            }
+            if (tuvoNotaMenorA4) {
+                System.out.println("Motivo: Tuvo al menos una nota menor a 4.");
+            }
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
