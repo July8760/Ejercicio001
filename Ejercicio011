@@ -1,0 +1,25 @@
+public class Ejercicio011 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Generador de Tabla de Multiplicar ---");
+
+        // Solicita al usuario que ingrese un número
+        System.out.print("Ingresa un número para ver su tabla de multiplicar: ");
+        int numero = scanner.nextInt(); // Lee el número ingresado por el usuario
+
+        System.out.println("\nTabla de multiplicar del " + numero + ":");
+
+        // Bucle for para calcular y mostrar la tabla de multiplicar del 1 al 10
+        for (int i = 1; i <= 10; i++) {
+            // Calcula el resultado de la multiplicación
+            int resultado = numero * i;
+            // Imprime la operación y el resultado en el formato: "numero x i = resultado"
+            System.out.println(numero + " x " + i + " = " + resultado);
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
