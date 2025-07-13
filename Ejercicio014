@@ -1,0 +1,37 @@
+public class Ejercicio014 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Variable para acumular la suma de las calificaciones
+        double sumaCalificaciones = 0;
+        // Constante para el número de estudiantes
+        final int NUM_ESTUDIANTES = 6;
+
+        System.out.println("Por favor, ingresa las calificaciones de " + NUM_ESTUDIANTES + " estudiantes:");
+
+        // Bucle para solicitar y sumar las calificaciones de los estudiantes
+        for (int i = 1; i <= NUM_ESTUDIANTES; i++) {
+            System.out.print("Ingresa la calificación del estudiante " + i + ": ");
+            double calificacion = scanner.nextDouble(); // Lee la calificación ingresada
+            sumaCalificaciones += calificacion; // Suma la calificación actual a la suma total
+            System.out.println("Calificación del estudiante " + i + ": " + String.format("%.2f", calificacion));
+        }
+
+        // Calcula el promedio de las calificaciones
+        double promedioGrupo = sumaCalificaciones / NUM_ESTUDIANTES;
+
+        System.out.println("\n--- Resultado del Grupo ---");
+        System.out.println("El promedio general del grupo es: " + String.format("%.2f", promedioGrupo));
+
+        // Determina si el grupo aprobó
+        if (promedioGrupo >= 7) {
+            System.out.println("¡El grupo en general ha APROBADO el curso!");
+        } else {
+            System.out.println("El grupo en general ha REPROBADO el curso.");
+        }
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
