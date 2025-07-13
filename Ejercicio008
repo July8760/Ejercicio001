@@ -1,0 +1,57 @@
+import java.util.ArrayList; // Importa la clase ArrayList para almacenar las edades
+import java.util.Collections; // Importa la clase Collections para encontrar el máximo y mínimo
+import java.util.Scanner;    // Importa la clase Scanner para leer la entrada del usuario
+
+public class Ejercicio008 {
+    public static void main(String[] args) {
+        // Crea un objeto Scanner para obtener la entrada del usuario desde la consola
+        Scanner scanner = new Scanner(System.in);
+
+        // Crea una lista para almacenar las edades ingresadas
+        ArrayList<Integer> edades = new ArrayList<>();
+
+        // Variable para contar cuántas personas son mayores de edad
+        int contadorMayoresEdad = 0;
+
+        System.out.println("Por favor, ingresa las edades de 10 personas:");
+
+        // Bucle para registrar las edades de 10 personas
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingresa la edad de la persona " + (i + 1) + ": ");
+            int edad = scanner.nextInt(); // Lee la edad ingresada
+            edades.add(edad); // Agrega la edad a la lista
+
+            // Verifica si la persona es mayor de edad (18 años o más)
+            if (edad >= 18) {
+                contadorMayoresEdad++; // Incrementa el contador si es mayor de edad
+            }
+        }
+
+        System.out.println("\n--- Resumen de Edades ---");
+
+        // Muestra el listado de todas las edades ingresadas
+        System.out.println("Listado de edades ingresadas: " + edades);
+
+        // Muestra la cantidad de personas mayores de edad
+        System.out.println("Cantidad de personas mayores de edad (18+): " + contadorMayoresEdad);
+
+        // Encuentra y muestra la edad más alta
+        // Collections.max() encuentra el valor máximo en la lista
+        int edadMasAlta = Collections.max(edades);
+        System.out.println("La edad más alta ingresada es: " + edadMasAlta);
+
+        // Encuentra y muestra la edad más baja
+        // Collections.min() encuentra el valor mínimo en la lista
+        int edadMasBaja = Collections.min(edades);
+        System.out.println("La edad más baja ingresada es: " + edadMasBaja);
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+
+        System.out.println("El monto final a pagar es: $" + String.format("%.2f", montoFinal));
+
+        // Cierra el objeto Scanner para liberar recursos
+        scanner.close();
+    }
+}
